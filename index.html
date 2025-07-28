@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flappy Bird Game</title>
+  <link rel="icon" href="assets/hummingbird.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- LOGIN SCREEN -->
+  <div id="loginScreen">
+    <h1>Welcome to Flappy Bird</h1>
+    <input type="text" id="playerName" placeholder="Enter your name" />
+    <br>
+    <button onclick="handleLogin()">Login</button>
+  </div>
+
+  <!-- MAIN MENU -->
+  <!-- MAIN MENU -->
+<div id="menu" style="display: none;">
+  <div class="menu-box">
+  <h1>Flappy Bird - The Ultimate</h1>
+  <div id="menuSelectors">
+
+    <!-- BACKGROUND SELECT -->
+<div class="selector-group">
+  <p>Select Background:</p>
+  <input type="radio" id="bg1" name="bg" value="0" checked>
+  <label for="bg1">Day</label>
+
+  <input type="radio" id="bg2" name="bg" value="1">
+  <label for="bg2">Night</label>
+
+  <input type="radio" id="bg3" name="bg" value="2">
+  <label for="bg3">Woods</label>
+
+  <input type="radio" id="bg4" name="bg" value="3">
+  <label for="bg4">Heaven</label>
+</div>
+
+<!-- BIRD COLOR SELECT -->
+<div class="selector-group">
+  <p>Choose Bird Color:</p>
+  <input type="radio" id="greenBird" name="bird" value="green" >
+  <label for="greenBird">Green</label>
+
+  <input type="radio" id="blueBird" name="bird" value="blue">
+  <label for="blueBird">Blue</label>
+
+  <input type="radio" id="yellowBird" name="bird" value="yellow">
+  <label for="yellowBird">Yellow</label>
+</div>
+
+  <div id="menuButtons">
+    <button onclick="handlePlay()">Play</button>
+    <button onclick="handleLogout()">Logout</button>
+     <button id="endlessModeBtn" onclick="startEndlessGame()" style="display: none;">Play Endless Mode</button>
+</div>
+  </div>
+  </div>
+  </div>
+</div>
+
+
+
+  <!-- Profile Badge -->
+  <div id="profileBadge" style="display: none;">
+  <img src="https://cdn-icons-png.flaticon.com/512/2922/2922561.png" alt="User Icon" />
+  <div class="profile-text">
+    <span id="displayName">Player</span>
+    <span id="finalScoreText">Score: 0</span>
+  </div>
+  </div>
+
+  <!-- GAME CANVAS -->
+  <canvas id="gameCanvas" width="480" height="640"></canvas>
+
+  <!-- GAME OVER SCREEN -->
+  <!-- GAME OVER SCREEN -->
+  <div id="gameOverScreen" style="display: none;">
+    <div id="gameOverBox">
+      <h1>Game Over</h1>
+      <p>Your score: <span id="finalScore">0</span></p>
+
+      <div id="normalButtons">
+        <button onclick="restartGame()">Play Again</button>
+        <button onclick="goToMenu()">Main Menu</button>
+      </div>
+
+      <div id="endlessButtons" style="display: none;">
+        <button onclick="restartGame()">Play Endless Again</button>
+        <button onclick="goToMenu()">Main Menu</button>
+        <button onclick="openLeaderboard()">Leaderboard</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ENDLESS MODE UNLOCK POPUP -->
+  <div id="endlessPopup" style="display: none;">
+    <div class="popup-content">
+      <h2>🎉 Endless Mode Unlocked!</h2>
+      <p>You've reached the reqired points! Do you want to switch to Endless Mode?</p>
+      <button onclick="switchToEndlessMode()">Yes, Take Me There!</button>
+      <button onclick="keepPlayingNormal()">Keep Playing</button>
+      </div>
+  </div>
+
+  <script src="script.js">
+  </script>
+</body>
+</html>
